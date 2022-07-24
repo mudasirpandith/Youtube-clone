@@ -15,6 +15,7 @@ import { Button } from "@mui/material";
 
 import {
   ArrowDropDown,
+  DarkModeOutlined,
   LightModeOutlined,
   PlayCircleFilledWhiteOutlined,
   ShortcutSharp,
@@ -26,7 +27,7 @@ const Container = styled.div`
   color: ${({ theme }) => theme.text};
   font-size: 14px;
   font-family: Roboto;
-  height: 100%;
+  height: 90%;
   position: sticky;
   top: 0;
 `;
@@ -44,6 +45,8 @@ const Item = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
+  font-size: 16px;
+  font-family: "DM Sans", sans-serif;
   cursor: pointer;
   gap: 5px;
   padding: 7.5px 0;
@@ -54,9 +57,10 @@ const Item = styled.div`
 const Hr = styled.div`
   margin: 15px 0;
   color: ${({ theme }) => theme.text};
-  border: 0.5px solid #373737;
+  border: 0.5px solid ${({ theme }) => theme.textSoft};
 `;
 export const Menu = ({ darkMode, setDarkMode }) => {
+  localStorage.setItem("mode", darkMode);
   return (
     <Container>
       <Wrapper>
@@ -83,16 +87,16 @@ export const Menu = ({ darkMode, setDarkMode }) => {
             </span>
           </Logo>
         </Link>
-        <Item>
+        <Item title="Home">
           <HomeOutlinedIcon /> Home
         </Item>{" "}
-        <Item>
+        <Item title="Explore">
           <ExploreOutlinedIcon /> Explore
         </Item>{" "}
-        <Item>
+        <Item title="Shorts ">
           <ShortcutSharp /> Shorts
         </Item>{" "}
-        <Item>
+        <Item title=" Subscriptions">
           <SubscriptionsOutlinedIcon /> Subscriptions
         </Item>{" "}
         <Hr />
@@ -103,36 +107,43 @@ export const Menu = ({ darkMode, setDarkMode }) => {
           </Button>
         </Link>
         <Hr />
-        <Item>
+        <Item title=" Libraray">
           <VideoLibraryOutlinedIcon /> Library
         </Item>{" "}
-        <Item>
+        <Item title="Histroy ">
           <HistoryOutlinedIcon /> History
         </Item>{" "}
-        <Item>
+        <Item title="Your Videos">
           <SmartDisplayOutlinedIcon /> Your Videos
         </Item>{" "}
-        <Item>
+        <Item title="Watch Later ">
           <AccessTimeOutlinedIcon /> Watch Later
         </Item>{" "}
-        <Item>
-          <ThumbUpSharp /> Liked Videos
-        </Item>{" "}
-        <Item>
+        <Link
+          to="likedvedios"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          {" "}
+          <Item title="Linked Videos ">
+            <ThumbUpSharp /> Liked Videos
+          </Item>{" "}
+        </Link>
+        <Item title="Show More ">
           <ArrowDropDown /> Show More
         </Item>{" "}
         <Hr />
-        <Item>
+        <Item title="Setting ">
           <SettingsOutlinedIcon /> Setting
         </Item>{" "}
         <Item
+          title="Mode"
           onClick={() => {
             setDarkMode(!darkMode);
           }}
         >
-          <LightModeOutlined /> Light Mode
+          {darkMode ? <LightModeOutlined /> : <DarkModeOutlined />}{" "}
+          {darkMode ? "Light Mode" : "Dark Mode"}
         </Item>{" "}
-        <Hr />
       </Wrapper>
     </Container>
   );

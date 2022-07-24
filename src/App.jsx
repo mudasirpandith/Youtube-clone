@@ -7,6 +7,8 @@ import { HomePage } from "./Pages/HomePage";
 import VideoPage from "./Pages/VideoPage";
 import { darkTheme, lightTheme } from "./utils/theme";
 import Signin from "./Pages/Signin";
+import LikedVideos from "./Pages/LikedVideos";
+import Mobile from "./Pages/Mobile";
 const Container = styled.div`
   display: flex;
   background-color: ${({ theme }) => theme.bg};
@@ -18,29 +20,39 @@ const Main = styled.div`
 const Wrapper = styled.div`
   padding: 22px 96px;
 `;
+
 export default function App() {
   const [darkMode, setDarkMode] = useState(1);
-  return (
-    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <Container>
-        <BrowserRouter>
-          <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
-          <Main>
-            <Navbar />
-            <Wrapper>
-              <Routes>
-                <Route path="/">
-                  <Route index element={<HomePage />} />
-                  <Route path="signin" element={<Signin />} />
-                  <Route path="/video">
-                    <Route path=":id" element={<VideoPage />} />
+
+  return window.innerWidth > 1200 ? (
+    <>
+      {" "}
+      
+      <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+        <Container>
+          <BrowserRouter>
+            <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
+            <Main>
+              <Navbar />
+              <Wrapper>
+                <Routes>
+                  <Route path="/">
+                    <Route index element={<HomePage />} />
+                    <Route path="signin" element={<Signin />} />
+                    <Route path="likedvedios" element={<LikedVideos />} />
+                    <Route path="/video">
+                      <Route path=":id" element={<VideoPage />} />
+                    </Route>
                   </Route>
-                </Route>
-              </Routes>
-            </Wrapper>
-          </Main>
-        </BrowserRouter>
-      </Container>
-    </ThemeProvider>
+                </Routes>
+              </Wrapper>
+            </Main>
+          </BrowserRouter>
+        </Container>
+      </ThemeProvider>
+      
+    </>
+  ) : (
+    <Mobile />
   );
 }

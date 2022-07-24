@@ -8,6 +8,7 @@ import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 import FlagOutlinedIcon from "@mui/icons-material/FlagOutlined";
 // import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 // import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { ArrowDropDown } from "@mui/icons-material";
 import Card from "../components/card";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Comment from "../components/Comment";
@@ -16,6 +17,9 @@ const Container = styled.div`
 display:flex;
 gap:24px:`;
 const Content = styled.div`
+  height: 100%;
+  position: sticky;
+  top: 60px;
   flex: 5;
 `;
 const Recommendation = styled.div`
@@ -64,7 +68,7 @@ const SubscribeButton = styled.button`
 const Image = styled.img`
   width: 50px;
   height: 50px;
-
+  margin-right: 10px;
   border-radius: 50%;
 `;
 const ChannelDetail = styled.div`
@@ -86,7 +90,12 @@ const ChannelDescription = styled.p`
 `;
 const Hr = styled.div`
   margin: 15px 0;
-  border: 0.5px solid #373737;
+
+  color: ${({ theme }) => theme.text};
+  border: 0.5px solid ${({ theme }) => theme.textSoft};
+`;
+const RecommendMore = styled.h1`
+  font-size: 20px;
 `;
 const VideoPage = () => {
   return (
@@ -103,7 +112,12 @@ const VideoPage = () => {
             allowfullscreen
           ></iframe>
         </VideoWrapper>
-        <Title>First Video</Title>
+        <Title>
+          First Video : Lorem, ipsum dolor sit amet consectetur adipisicing
+          elit. Deleniti numquam aliquam eius, ipsa culpa esse nihil sapiente
+          incidunt fugit quo ullam alias quis totam eos harum. Rerum excepturi
+          provident perspiciatis.
+        </Title>
         <Details>
           <Info>2,433,22 Views Jun 22 2022</Info>
           <Buttons>
@@ -134,9 +148,9 @@ const VideoPage = () => {
         <Hr />
         <Channel>
           <ChannelInfo>
-            <Image src="https://www.techsmith.com/blog/wp-content/uploads/2019/06/YouTube-Thumbnail-Sizes.png" />
+            <Image src="https://yt3.ggpht.com/ytc/AKedOLSH14_tdB5bN4_3WJxDcljIXgHjLIKuVfDVHdnl3w=s88-c-k-c0x00ffffff-no-rj" />
             <ChannelDetail>
-              <ChannelName>Apna College</ChannelName>
+              <ChannelName>kTupe</ChannelName>
               <ChannelCounter>11.1M Subscribers</ChannelCounter>
               <ChannelDescription>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -152,11 +166,28 @@ const VideoPage = () => {
         <Comments />
         <Comment />
         <Comment /> <Comment />
+        <Comment />
+        <Comment /> <Comment />
       </Content>
       <Recommendation>
         {" "}
-        Watch Similar Videos
-        <Card type="sm" />
+        <RecommendMore>Watch More</RecommendMore>
+        <Card type="sm" rem="no" title=" Inventoreulla recusandae dolor..." />
+        <Card type="sm" rem="no" title=" Inventoreulla recusandae dolor..." />
+        <Card type="sm" rem="no" title=" Inventoreulla recusandae dolor..." />
+        <Card type="sm" rem="no" title=" Inventoreulla recusandae dolor..." />
+        <Card type="sm" rem="no" title=" Inventoreulla recusandae dolor..." />
+        <Card type="sm" rem="no" title=" Inventoreulla recusandae dolor..." />
+        <Card type="sm" rem="no" title=" Inventoreulla recusandae dolor..." />
+        <Card type="sm" rem="no" title=" Inventoreulla recusandae dolor..." />
+        <Card type="sm" rem="no" title=" Inventoreulla recusandae dolor..." />
+        <Card type="sm" rem="no" title=" Inventoreulla recusandae dolor..." />
+        <Card type="sm" rem="no" title=" Inventoreulla recusandae dolor..." />
+        <Card type="sm" rem="no" title=" Inventoreulla recusandae dolor..." />
+        <center>
+          <ArrowDropDown />
+
+        </center>
       </Recommendation>
     </Container>
   );
