@@ -8,8 +8,10 @@ import { Link } from "react-router-dom";
 const Container = styled.div`
   position: sticky;
   top: 0;
+  z-index:1;
   background-color: ${({ theme }) => theme.bgLighter};
   height: 50px;
+  padding:10px 0  0 0;
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -25,7 +27,6 @@ const Search = styled.div`
   left: 0px;
   right: 0px;
   margin: auto;
-
   display: flex;
   align-items: center;
   justify-content: space-between;

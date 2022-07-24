@@ -2,9 +2,9 @@ import { Button } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import ShareIcon from "@mui/icons-material/Share";
-import { ThumbUpSharp } from "@mui/icons-material";
 import ContentCutIcon from "@mui/icons-material/ContentCut";
-import ThumbDownIcon from "@mui/icons-material/ThumbDown";
+import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
+import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 import FlagOutlinedIcon from "@mui/icons-material/FlagOutlined";
 // import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 // import CheckCircleIcon from "@mui/icons-material/CheckCircle";
@@ -19,6 +19,7 @@ gap:24px:`;
 const Content = styled.div`
   height: 100%;
   position: sticky;
+
   top: 60px;
   flex: 5;
 `;
@@ -97,6 +98,16 @@ const Hr = styled.div`
 const RecommendMore = styled.h1`
   font-size: 20px;
 `;
+const Hashtags = styled.div`
+  display: flex;
+  margin-bottom: -25px;
+  gap: 5px;
+`;
+const Hashtag = styled.p`
+  display: flex;
+  font-size: 10px;
+  color: #3894e1;
+`;
 const VideoPage = () => {
   return (
     <Container>
@@ -112,6 +123,10 @@ const VideoPage = () => {
             allowfullscreen
           ></iframe>
         </VideoWrapper>
+        <Hashtags>
+          <Hashtag>#ALPHA </Hashtag>
+          <Hashtag>#REACT </Hashtag> <Hashtag>#STYLEDCOMPONETS </Hashtag>
+        </Hashtags>
         <Title>
           First Video : Lorem, ipsum dolor sit amet consectetur adipisicing
           elit. Deleniti numquam aliquam eius, ipsa culpa esse nihil sapiente
@@ -121,11 +136,11 @@ const VideoPage = () => {
         <Details>
           <Info>2,433,22 Views Jun 22 2022</Info>
           <Buttons>
-            <Button color="inherit" startIcon={<ThumbUpSharp />}>
+            <Button color="inherit" startIcon={<ThumbUpAltOutlinedIcon />}>
               {" "}
               1.2K
             </Button>
-            <Button color="inherit" startIcon={<ThumbDownIcon />}>
+            <Button color="inherit" startIcon={<ThumbDownOutlinedIcon />}>
               {" "}
               DisLike
             </Button>
@@ -157,6 +172,8 @@ const VideoPage = () => {
                 Repudiandae aliquid sequi quasi aperiam, cupiditate culpa
                 quisquam. Unde, officia totam! Voluptate dicta eaque debitis
                 iste deserunt. Dolore nobis temporibus expedita hic?
+                <br />
+                <Button color="inherit">Show More</Button>
               </ChannelDescription>
             </ChannelDetail>
           </ChannelInfo>
@@ -186,7 +203,6 @@ const VideoPage = () => {
         <Card type="sm" rem="no" title=" Inventoreulla recusandae dolor..." />
         <center>
           <ArrowDropDown />
-
         </center>
       </Recommendation>
     </Container>

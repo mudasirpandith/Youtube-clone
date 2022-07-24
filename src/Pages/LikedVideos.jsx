@@ -1,6 +1,7 @@
 import { MoreHorizSharp, ShuffleOutlined } from "@mui/icons-material";
 import React from "react";
 import styled from "styled-components";
+import ModifiedCard from "../components/ModifiedCard";
 import Card from "../components/card";
 const Container = styled.div`
   display: flex;
@@ -75,6 +76,7 @@ const Username = styled.p`
   font-weight: 400;
 `;
 const LikedVideos = (props) => {
+  var c = [1, 2, 3, 4, 5, 6, 7, 8, 9, 7, 5, 4, 3, 3, 5, 6, 2, 3, 5]; //for parsing liked videos and get their index
   return (
     <Container>
       <Wrapper>
@@ -82,7 +84,7 @@ const LikedVideos = (props) => {
           <Card type="liked" />
           <PlayALL>Play All</PlayALL>
           <Title>Liked Vedios</Title>
-          <Details>124 videos No views Updated today</Details>
+          <Details>13 videos ⋅ No views ⋅ Updated today</Details>
           <Button>🔒Private</Button> <br />
           <Shuffle>
             {" "}
@@ -96,66 +98,19 @@ const LikedVideos = (props) => {
           </UserDetails>
         </Collection>
         <AllVedios>
-          <Card
-            type="sm"
-            rem="yes"
-            title="r adipisicingconsequatur tempore vel tempora quis quisquam, nulla recusandae dolor? Voluptas hic quas incidunt cupiditate?
+          {c.map((row, index) => {
+            return (
+              <>
+                <ModifiedCard
+                  serial={index}
+                  type="sm"
+                  liked="yes"
+                  title="All adipisicingconsequatur tempore vel tempora quis quisquam, nulla recusandae dolor? Voluptas hic quas incidunt cupiditate?
 "
-          />{" "}
-          <Card
-            type="sm"
-            rem="yes"
-            title="r adipisicingconsequatur tempore vel tempora quis quisquam, nulla recusandae dolor? Voluptas hic quas incidunt cupiditate?
-"
-          />{" "}
-          <Card
-            type="sm"
-            rem="yes"
-            title="r adipisicingconsequatur tempore vel tempora quis quisquam, nulla recusandae dolor? Voluptas hic quas incidunt cupiditate?
-"
-          />{" "}
-          <Card
-            type="sm"
-            rem="yes"
-            title="r adipisicingconsequatur tempore vel tempora quis quisquam, nulla recusandae dolor? Voluptas hic quas incidunt cupiditate?
-"
-          />{" "}
-          <Card
-            type="sm"
-            rem="yes"
-            title="r adipisicingconsequatur tempore vel tempora quis quisquam, nulla recusandae dolor? Voluptas hic quas incidunt cupiditate?
-"
-          />{" "}
-          <Card
-            type="sm"
-            rem="yes"
-            title="r adipisicingconsequatur tempore vel tempora quis quisquam, nulla recusandae dolor? Voluptas hic quas incidunt cupiditate?
-"
-          />{" "}
-          <Card
-            type="sm"
-            rem="yes"
-            title="r adipisicingconsequatur tempore vel tempora quis quisquam, nulla recusandae dolor? Voluptas hic quas incidunt cupiditate?
-"
-          />{" "}
-          <Card
-            type="sm"
-            rem="yes"
-            title="r adipisicingconsequatur tempore vel tempora quis quisquam, nulla recusandae dolor? Voluptas hic quas incidunt cupiditate?
-"
-          />{" "}
-          <Card
-            type="sm"
-            rem="yes"
-            title="r adipisicingconsequatur tempore vel tempora quis quisquam, nulla recusandae dolor? Voluptas hic quas incidunt cupiditate?
-"
-          />{" "}
-          <Card
-            type="sm"
-            rem="yes"
-            title="r adipisicingconsequatur tempore vel tempora quis quisquam, nulla recusandae dolor? Voluptas hic quas incidunt cupiditate?
-"
-          />
+                />{" "}
+              </>
+            );
+          })}
         </AllVedios>
       </Wrapper>
     </Container>

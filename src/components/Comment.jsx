@@ -1,4 +1,6 @@
 import React from "react";
+import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
+import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 import styled from "styled-components";
 const Container = styled.div`
   display: flex;
@@ -21,14 +23,23 @@ const Name = styled.span`
   font-weight: 500;
 `;
 const Date = styled.span`
-
   font-size: 12px;
   font-weight: 400;
-  color: color: ${({ theme }) => theme.textSoft};
-  margin-left:5px;
+  color: ${({ theme }) => theme.textSoft};
+  margin-left: 5px;
 `;
 const Text = styled.span`
   font-size: 14px;
+`;
+const Reactions = styled.div`
+  display: flex;
+
+  gap: 10px;
+`;
+const Button = styled.button`
+  background-color: transparent;
+  color: ${({ theme }) => theme.textSoft};
+  border: none;
 `;
 const Comment = () => {
   return (
@@ -45,6 +56,17 @@ const Comment = () => {
           provident. Porro earum corporis animi fugit iure quae necessitatibus
           similique modi quasi eveniet!
         </Text>
+        <Reactions>
+          <Button>
+            {" "}
+            <ThumbUpAltOutlinedIcon fontSize="12px" /> 110{" "}
+          </Button>
+          <Button>
+            {" "}
+            <ThumbDownOutlinedIcon fontSize="12px" />{" "}
+          </Button>
+          <Button>REPLY</Button>
+        </Reactions>
       </Details>
     </Container>
   );

@@ -9,6 +9,7 @@ import { darkTheme, lightTheme } from "./utils/theme";
 import Signin from "./Pages/Signin";
 import LikedVideos from "./Pages/LikedVideos";
 import Mobile from "./Pages/Mobile";
+import Explore from "./Pages/Explore";
 const Container = styled.div`
   display: flex;
   background-color: ${({ theme }) => theme.bg};
@@ -27,7 +28,6 @@ export default function App() {
   return window.innerWidth > 1200 ? (
     <>
       {" "}
-      
       <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
         <Container>
           <BrowserRouter>
@@ -40,6 +40,7 @@ export default function App() {
                     <Route index element={<HomePage />} />
                     <Route path="signin" element={<Signin />} />
                     <Route path="likedvedios" element={<LikedVideos />} />
+                    <Route path="explore" element={<Explore />} />
                     <Route path="/video">
                       <Route path=":id" element={<VideoPage />} />
                     </Route>
@@ -50,7 +51,6 @@ export default function App() {
           </BrowserRouter>
         </Container>
       </ThemeProvider>
-      
     </>
   ) : (
     <Mobile />

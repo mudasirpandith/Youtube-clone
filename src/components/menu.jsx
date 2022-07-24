@@ -13,17 +13,19 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { Button } from "@mui/material";
 
+import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 import {
   ArrowDropDown,
   DarkModeOutlined,
   LightModeOutlined,
   PlayCircleFilledWhiteOutlined,
   ShortcutSharp,
-  ThumbUpSharp,
+
+  
 } from "@mui/icons-material";
 const Container = styled.div`
   flex: 1;
-  background-color: ${({ theme }) => theme.bg};
+  background-color: ${({ theme }) => theme.bgLighter};
   color: ${({ theme }) => theme.text};
   font-size: 14px;
   font-family: Roboto;
@@ -87,12 +89,20 @@ export const Menu = ({ darkMode, setDarkMode }) => {
             </span>
           </Logo>
         </Link>
-        <Item title="Home">
-          <HomeOutlinedIcon /> Home
-        </Item>{" "}
-        <Item title="Explore">
-          <ExploreOutlinedIcon /> Explore
-        </Item>{" "}
+        <Link
+          to="/"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          {" "}
+          <Item title="Home">
+            <HomeOutlinedIcon /> Home
+          </Item>{" "}
+        </Link>
+        <Link to="explore" style={{ textDecoration: "none", color: "inherit" }}>
+          <Item title="Explore">
+            <ExploreOutlinedIcon /> Explore
+          </Item>{" "}
+        </Link>
         <Item title="Shorts ">
           <ShortcutSharp /> Shorts
         </Item>{" "}
@@ -125,7 +135,7 @@ export const Menu = ({ darkMode, setDarkMode }) => {
         >
           {" "}
           <Item title="Linked Videos ">
-            <ThumbUpSharp /> Liked Videos
+            <ThumbUpAltOutlinedIcon /> Liked Videos
           </Item>{" "}
         </Link>
         <Item title="Show More ">
