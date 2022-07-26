@@ -1,8 +1,8 @@
 {
   "name": "tutube",
   "version": "0.1.0",
-  "private": false,
-  "homepage": "https://mudasirpandith.github.io",
+  "private": true,
+   "homepage": "https://mudasirpandith.github.io/",
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",

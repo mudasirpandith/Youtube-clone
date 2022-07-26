@@ -10,6 +10,9 @@ import Signin from "./Pages/Signin";
 import LikedVideos from "./Pages/LikedVideos";
 import Mobile from "./Pages/Mobile";
 import Explore from "./Pages/Explore";
+import Setting from "./Pages/Setting";
+import Subscriptions from "./Pages/Subscriptions";
+import Libaray from "./Pages/Libaray";
 const Container = styled.div`
   display: flex;
   background-color: ${({ theme }) => theme.bg};
@@ -19,7 +22,7 @@ const Main = styled.div`
   flex: 7;
 `;
 const Wrapper = styled.div`
-  padding: 22px 96px;
+  padding: 22px 20px;
 `;
 
 export default function App() {
@@ -41,6 +44,9 @@ export default function App() {
                     <Route path="signin" element={<Signin />} />
                     <Route path="likedvedios" element={<LikedVideos />} />
                     <Route path="explore" element={<Explore />} />
+                    <Route path="setting" element={<Setting />} />
+                    <Route path="subscriptions" element={<Subscriptions />} />
+                    <Route path="library" element={<Libaray />} />
                     <Route path="/video">
                       <Route path=":id" element={<VideoPage />} />
                     </Route>

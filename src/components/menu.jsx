@@ -20,11 +20,9 @@ import {
   LightModeOutlined,
   PlayCircleFilledWhiteOutlined,
   ShortcutSharp,
-
-  
 } from "@mui/icons-material";
 const Container = styled.div`
-  flex: 1;
+  flex: 1.3;
   background-color: ${({ theme }) => theme.bgLighter};
   color: ${({ theme }) => theme.text};
   font-size: 14px;
@@ -58,8 +56,12 @@ const Item = styled.div`
 `;
 const Hr = styled.div`
   margin: 15px 0;
-  color: ${({ theme }) => theme.text};
-  border: 0.5px solid ${({ theme }) => theme.textSoft};
+  color: ${({ theme }) => theme.textSoft};
+
+  background-color: ${({ theme }) => theme.soft};
+  height: 1px;
+  border: none;
+  max-width: 100%;
 `;
 export const Menu = ({ darkMode, setDarkMode }) => {
   localStorage.setItem("mode", darkMode);
@@ -89,10 +91,7 @@ export const Menu = ({ darkMode, setDarkMode }) => {
             </span>
           </Logo>
         </Link>
-        <Link
-          to="/"
-          style={{ textDecoration: "none", color: "inherit" }}
-        >
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
           {" "}
           <Item title="Home">
             <HomeOutlinedIcon /> Home
@@ -106,20 +105,28 @@ export const Menu = ({ darkMode, setDarkMode }) => {
         <Item title="Shorts ">
           <ShortcutSharp /> Shorts
         </Item>{" "}
-        <Item title=" Subscriptions">
-          <SubscriptionsOutlinedIcon /> Subscriptions
-        </Item>{" "}
+        <Link
+          to="subscriptions"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          <Item title=" Subscriptions">
+            <SubscriptionsOutlinedIcon /> Subscriptions
+          </Item>{" "}
+        </Link>
         <Hr />
-        Sign in to like videos, comment and subscribe.
+        Sign in to like videos, comment and subscribe. <br />
         <Link to="/signin" style={{ textDecoration: "none" }}>
           <Button startIcon={<AccountCircleOutlinedIcon />} variant="outlined">
             Sign In
           </Button>
         </Link>
         <Hr />
-        <Item title=" Libraray">
-          <VideoLibraryOutlinedIcon /> Library
-        </Item>{" "}
+        <Link to="library" style={{ textDecoration: "none", color: "inherit" }}>
+          {" "}
+          <Item title=" Libraray">
+            <VideoLibraryOutlinedIcon /> Library
+          </Item>{" "}
+        </Link>
         <Item title="Histroy ">
           <HistoryOutlinedIcon /> History
         </Item>{" "}
@@ -142,9 +149,11 @@ export const Menu = ({ darkMode, setDarkMode }) => {
           <ArrowDropDown /> Show More
         </Item>{" "}
         <Hr />
-        <Item title="Setting ">
-          <SettingsOutlinedIcon /> Setting
-        </Item>{" "}
+        <Link to="setting" style={{ textDecoration: "none", color: "inherit" }}>
+          <Item title="Setting ">
+            <SettingsOutlinedIcon /> Setting
+          </Item>{" "}
+        </Link>
         <Item
           title="Mode"
           onClick={() => {

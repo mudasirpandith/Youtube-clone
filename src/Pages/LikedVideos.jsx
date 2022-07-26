@@ -83,7 +83,7 @@ const LikedVideos = (props) => {
         <Collection>
           <Card type="liked" />
           <PlayALL>Play All</PlayALL>
-          <Title>Liked Vedios</Title>
+          <Title>Liked Videos</Title>
           <Details>13 videos ⋅ No views ⋅ Updated today</Details>
           <Button>🔒Private</Button> <br />
           <Shuffle>

@@ -79,8 +79,7 @@ const ModifiedCard = ({ type, liked, title, serial }) => {
           type={type}
           liked={liked}
           loading="lazy"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu7mjcd09SDJPeHZ3Eol8msAG0jE7EH1ee8g&usqp=CAU"
-        />
+          src="https://images.hdqwalls.com/wallpapers/nature-background.jpg" />
         <Details type={type} liked={liked}>
           <ChannelImage
             type={type}

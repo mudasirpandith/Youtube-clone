@@ -50,12 +50,7 @@ const Comment = () => {
           Mudasir Pandith <Date>Jun 01</Date>
         </Name>
 
-        <Text>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          dolorum dignissimos culpa id, voluptatem fugit laboriosam? Impedit,
-          provident. Porro earum corporis animi fugit iure quae necessitatibus
-          similique modi quasi eveniet!
-        </Text>
+        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit.</Text>
         <Reactions>
           <Button>
             {" "}

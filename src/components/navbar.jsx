@@ -12,6 +12,7 @@ const Container = styled.div`
   background-color: ${({ theme }) => theme.bgLighter};
   height: 50px;
   padding:10px 0  0 0;
+  opacity:99%;
 `;
 const Wrapper = styled.div`
   display: flex;
