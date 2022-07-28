@@ -1,91 +1,113 @@
+import { ArrowForwardIos } from "@mui/icons-material";
 import React from "react";
 import styled from "styled-components";
-import Card from "../components/card";
+import HomeImage from "../Images/homeImage.png";
+import { Button } from "@mui/material";
+import SmallCards from "../components/smallCards";
+
 const Container = styled.div`
   display: flex;
-
   flex-direction: column;
 `;
-const VideosCard = styled.div`
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-`;
-const Nav = styled.div`
-  position: sticky;
-  top: 56px;
-  z-index: 1;
-  margin-left: -20px;
-  margin-bottom: 20px;
-  margin-top: -22px;
+const Wrapper = styled.div`
+  width: 100%;
   display: flex;
   flex: 1;
-  gap: 15px;
-  background-color: ${({ theme }) => theme.bgLighter};
-  width: 1280px;
-  height: 60px;
-  overflow-x: scroll;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  flex-wrap: wrap;
+  color: #354259;
+  background-color: #cfd2cf;
 `;
 
-const NavButtons = styled.button`
-  background-color: ${({ theme }) => theme.soft};
-  height: 30px;
-  width: 100%;
-  //text-align: center;
-  margin: 15px 0;
-  color: ${({ theme }) => theme.text};
-  border: none;
-  border-radius: 20px;
+const LeftPart = styled.div`
+  display: flex;
+
+  flex: 1;
+  flex-direction: column;
+  text-align: center;
+  margin: auto 20px;
+`;
+const ImagePart = styled.div`
+  display: flex;
+`;
+const Heading = styled.h2`
+  font-size: 24px;
+`;
+const TopHeading = styled.h2`
+  font-size: 30px;
+`;
+const SubHeading = styled.h4`
+  font-size: 14px;
+`;
+const Image = styled.img`
+  width: ${window.innerWidth};
+`;
+
+const NewTests = styled.div`
   padding: 10px;
 `;
+const NewTestCards = styled.div`
+  display: flex;
+  flex: 1;
+  gap: 10px;
+  flex-direction: horizontal;
+`;
 
-export const HomePage = () => {
+const Hr = styled.div`
+  margin: 15px 0;
+  color: red;
+
+  background-color: grey;
+  height: 1px;
+  border: none;
+  max-width: 100%;
+`;
+const HomePage = () => {
   return (
     <Container>
-      <Nav>
-        <NavButtons>All</NavButtons> <NavButtons>Comedy</NavButtons>{" "}
-        <NavButtons>Action</NavButtons> <NavButtons>Home</NavButtons>{" "}
-        <NavButtons>Live</NavButtons> <NavButtons>Gaming</NavButtons>{" "}
-        <NavButtons>Cricket</NavButtons> <NavButtons>Football</NavButtons>{" "}
-        <NavButtons>Cartoon</NavButtons> <NavButtons>React</NavButtons>{" "}
-        <NavButtons>HTML</NavButtons> <NavButtons>News</NavButtons>{" "}
-        <NavButtons>Home</NavButtons> <NavButtons>Home</NavButtons>{" "}
-        <NavButtons>Home</NavButtons> <NavButtons>Home</NavButtons>{" "}
-        <NavButtons>Home</NavButtons> <NavButtons>Home</NavButtons>{" "}
-        <NavButtons>Home</NavButtons> <NavButtons>Home</NavButtons>{" "}
-        <NavButtons>Home</NavButtons> <NavButtons>Home</NavButtons>{" "}
-        <NavButtons>Home</NavButtons>
-      </Nav>
+      <Wrapper>
+        <ImagePart>
+          <Image src={HomeImage} />
+        </ImagePart>
+        <LeftPart>
+          <TopHeading>
+            We are <strong>Leaders</strong>
+          </TopHeading>
+          <SubHeading>
+            We are the <strong>Revolution</strong>
+          </SubHeading>
 
-      <VideosCard>
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />{" "}
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-        <Card title="How to use styled components to develop react App" />
-      </VideosCard>
+          <Heading>
+            Do you know all concepts but still can not solve problems? We are
+            here for you...
+          </Heading>
+          <SubHeading>
+            We provide Test series for National Level competitive exams like
+            NEET ,JEE Mains and for State Level Examinations.
+          </SubHeading>
+          <SubHeading>
+            After exam we provide detailed solution in the both video as well as
+            pdf form
+          </SubHeading>
+          <Button
+            color="inherit"
+            variant="contained"
+            endIcon={<ArrowForwardIos />}
+          >
+            {" "}
+            Take a Tour
+          </Button>
+        </LeftPart>
+      </Wrapper>
+      <NewTests>
+        <Hr />
+
+        <Heading>New Tests 2023</Heading>
+        <NewTestCards>
+          <SmallCards /> <SmallCards /> <SmallCards /> <SmallCards />{" "}
+        </NewTestCards>
+      </NewTests>
     </Container>
   );
 };
+
+export default HomePage;
